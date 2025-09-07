@@ -1,0 +1,254 @@
+/* Reset & Base Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top left, #ffe4f9, #e0c3fc);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.scrollable {
+  overflow-y: auto;
+  max-height: none;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ff6ec7;
+  text-shadow: 2px 2px #f9a1ff;
+}
+
+/* Avatar */
+#avatarContainer {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px auto;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#avatarContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stats & Inventory */
+#stats, #inventory {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#stats span, #inventory {
+  background: linear-gradient(135deg, #ffd1dc, #ffa3b1);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Game Log */
+#gameLog {
+  background: rgba(255,255,255,0.8);
+  border: 2px dashed #ffb3c1;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  height: 180px;
+  padding: 15px;
+  margin: 10px auto;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Menu */
+#menuContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+#menuToggle {
+  width: 100%;
+  background: linear-gradient(135deg, #a0c4ff, #bdb2ff);
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+#menuWrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+#menuWrapper.open {
+  max-height: 200px;
+}
+
+#gameMenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+#gameMenu button {
+  flex: 1 1 30%;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Sections */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 600px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+section {
+  background: rgba(255,255,255,0.9);
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Farm Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 8px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background: #ffe4f0;
+  border: 2px solid #ffc1e0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.cell.ready {
+  background: #e0ffe4;
+  border-color: #a3ffb1;
+}
+
+/* Plant Controls */
+#plantControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#seedSelect {
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Market & Lists */
+.list-item, .market-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+  margin: 6px;
+  text-align: center;
+  width: 120px;
+}
+
+.list-item button, .market-item button {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* Breeding Section */
+#breedingControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#breedSelect1, #breedSelect2 {
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#breedButton {
+  background: linear-gradient(135deg, #a0c4ff, #bdb2ff);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Back Buttons */
+button[id^="backFrom"], #closeMarket {
+  background: linear-gradient(135deg, #a0c4ff, #bdb2ff);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+}
