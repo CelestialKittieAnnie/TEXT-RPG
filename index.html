@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Legacy of the Watermelon Pandas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- START SCREEN -->
+  <section id="startScreen" class="scrollable">
+    <h1>🌸 Legacy of the Watermelon Pandas 🌸</h1>
+    <p>Enter your character’s name to begin your fantasy adventure:</p>
+    <input type="text" id="charName" placeholder="Your name…" />
+    <button id="startButton">Start Adventure</button>
+  </section>
+
+  <!-- GAME UI -->
+  <div id="gameUI" class="hidden">
+    <header>
+      <h1>Legacy of the Watermelon Pandas</h1>
+
+      <div id="avatarSection">
+        <input type="file" id="avatarUpload" accept="image/*" />
+        <div id="avatarContainer">
+          <img id="avatarImage" alt="Avatar" />
+        </div>
+      </div>
+
+      <div id="stats">
+        <span id="age">Age: 18</span>
+        <span id="health">Health: 100</span>
+        <span id="gold">Gold: 100</span>
+        <span id="generation">Gen: 1</span>
+      </div>
+
+      <div id="inventory">Seeds: Tomato(5), Apple(2), Berry(0), Watermelon(0)</div>
+    </header>
+
+    <main>
+      <!-- Collapsible Menu -->
+      <div id="menuContainer">
+        <button id="menuToggle">☰ Menu ▼</button>
+        <div id="menuWrapper">
+          <nav id="gameMenu">
+            <button data-action="travel">Travel</button>
+            <button data-action="farm">Farm</button>
+            <button data-action="battle">Battle</button>
+            <button data-action="craft">Craft</button>
+            <button data-action="cook">Cook</button>
+            <button data-action="breed">Breed</button>
+            <button data-action="market">Market</button>
+            <button data-action="animals">Animals</button>
+            <button data-action="recipes">Recipes</button>
+            <button data-action="gear">Gear</button>
+            <button data-action="family">Bloodline</button>
+          </nav>
+        </div>
+      </div>
+
+      <div id="gameLog"></div>
+
+      <!-- Travel -->
+      <section id="travelSection" class="hidden scrollable">
+        <h2>Travel</h2>
+        <div id="locationList"></div>
+        <button id="backFromTravel">Back</button>
+      </section>
+
+      <!-- Farming -->
+      <section id="farmSection" class="hidden scrollable">
+        <h2>Farm</h2>
+        <div id="plantControls">
+          <label for="seedSelect">Choose seed:</label>
+          <select id="seedSelect"></select>
+        </div>
+        <div id="farmGrid" class="grid"></div>
+      </section>
+
+      <!-- Market -->
+      <section id="marketSection" class="hidden scrollable">
+        <h2>Market</h2>
+        <div id="marketCats"></div>
+        <div id="marketItems"></div>
+        <button id="closeMarket">Back</button>
+      </section>
+
+      <!-- Animals -->
+      <section id="animalsSection" class="hidden scrollable">
+        <h2>Your Animals</h2>
+        <div id="animalList"></div>
+        <button id="backFromAnimals">Back</button>
+      </section>
+
+      <!-- Recipes -->
+      <section id="recipesSection" class="hidden scrollable">
+        <h2>Recipes</h2>
+        <div id="recipeList"></div>
+        <button id="backFromRecipes">Back</button>
+      </section>
+
+      <!-- Gear -->
+      <section id="gearSection" class="hidden scrollable">
+        <h2>Gear</h2>
+        <div id="gearList"></div>
+        <button id="backFromGear">Back</button>
+      </section>
+
+      <!-- Breeding -->
+      <section id="breedingSection" class="hidden scrollable">
+        <h2>Animal Breeding</h2>
+        <!-- Pen grid -->
+        <div id="penGrid" class="grid"></div>
+        <!-- Breeding controls -->
+        <div id="breedingControls">
+          <label for="breedSelect1">Parent 1:</label>
+          <select id="breedSelect1"></select>
+          <label for="breedSelect2">Parent 2:</label>
+          <select id="breedSelect2"></select>
+          <button id="breedButton">Breed</button>
+        </div>
+        <button id="backFromBreeding">Back</button>
+      </section>
+    </main>
+
+    <!-- End-of-life / Succession -->
+    <section id="endScreen" class="hidden scrollable">
+      <h2 id="endTitle"></h2>
+      <div id="endLog"></div>
+      <div id="continuationOptions"></div>
+    </section>
+  </div>
+</body>
+</html>
